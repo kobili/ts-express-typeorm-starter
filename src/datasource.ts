@@ -1,6 +1,4 @@
-import dotenv from 'dotenv'
-dotenv.config()
-
+import appConfig from './appconfig'
 import { DataSource } from "typeorm"
 import { User } from "./entities/User"
 import { AddUserTable1686805498941 as AddUserTable } from './migrations/1686805498941-AddUserTable'
@@ -8,11 +6,11 @@ import { AddUserTable1686805498941 as AddUserTable } from './migrations/16868054
 
 export const PGDataSource = new DataSource({
     type: "postgres",
-    host: process.env.POSTGRES_HOST,
-    port: parseInt(process.env.POSTGRES_PORT!),
-    username: process.env.POSTGRES_USERNAME,
-    password: process.env.POSTGRES_PASSWORD,
-    database: process.env.POSTGRES_DATABASE,
+    host: appConfig.db.host,
+    port: appConfig.db.port,
+    username: appConfig.db.username,
+    password: appConfig.db.password,
+    database: appConfig.db.database,
     synchronize: false,
     logging: true,
     entities: [
