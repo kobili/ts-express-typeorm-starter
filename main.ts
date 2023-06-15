@@ -1,4 +1,6 @@
 import express from 'express'
+import { PGDataSource } from './src/datasource'
+
 
 const app = express()
 app.use(express.json())
