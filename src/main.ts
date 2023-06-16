@@ -1,8 +1,8 @@
 import 'reflect-metadata'
 import express from 'express'
-import { PGDataSource } from './src/datasource'
+import { PGDataSource } from './datasource'
 
-import { errorLogger, errorHandler } from './src/middleware/errorHandlers'
+import { errorLogger, errorHandler } from './middleware/errorHandlers'
 
 
 const app = express()
