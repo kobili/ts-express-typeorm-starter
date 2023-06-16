@@ -1,6 +1,6 @@
 import { HttpCode } from "../enums/HttpCode";
 
-export class ApiError extends Error {
+export class HttpError extends Error {
     public httpCode: HttpCode;
 
     constructor(httpCode: HttpCode, message: string) {

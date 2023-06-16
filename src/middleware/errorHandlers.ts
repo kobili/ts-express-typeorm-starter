@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-import { ApiError } from "../exceptions/HttpError";
+import { HttpError } from "../exceptions/HttpError";
 
 export const errorLogger = (err: Error, req: Request, res: Response, next: NextFunction) => {
     console.error(err);
@@ -7,7 +7,7 @@ export const errorLogger = (err: Error, req: Request, res: Response, next: NextF
 }
 
 export const errorHandler = (err: Error, req: Request, res: Response, next: NextFunction) => {
-    if (err instanceof ApiError) {
+    if (err instanceof HttpError) {
         return res.status(err.httpCode).send({
             message: err.message,
         });
