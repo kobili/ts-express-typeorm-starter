@@ -1,8 +1,5 @@
 import appConfig from './appconfig'
 import { DataSource } from "typeorm"
-import { User } from "./entities/User"
-import { AddUserTable1686805498941 as AddUserTable } from './migrations/1686805498941-AddUserTable'
-
 
 export const PGDataSource = new DataSource({
     type: "postgres",
@@ -13,11 +10,7 @@ export const PGDataSource = new DataSource({
     database: appConfig.db.database,
     synchronize: false,
     logging: true,
-    entities: [
-        User,
-    ],
+    entities: ["src/entities/**/*.ts"],
     subscribers: [],
-    migrations: [
-        AddUserTable
-    ],
+    migrations: ["src/migrations/**/*.ts"],
 })
