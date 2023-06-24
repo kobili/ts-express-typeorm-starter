@@ -7,6 +7,6 @@ services:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=password
-      - POSTGRES_DB=sso_db
+      - POSTGRES_DB=example_db
     ports:
-      - 5051:5432
+      - 5052:5432
